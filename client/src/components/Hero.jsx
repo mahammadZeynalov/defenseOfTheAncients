@@ -2,7 +2,8 @@ import React from 'react';
 import { useQuery } from 'react-apollo';
 import gql from 'graphql-tag';
 import Matchups from './Matchups';
-import {HERO_QUERY} from '../queries/index'
+import { HERO_QUERY } from '../queries/index';
+import { Link } from 'react-router-dom';
 
 export default function Hero(props) {
 
@@ -19,10 +20,11 @@ export default function Hero(props) {
     }
     return (
         <div>
+            <Link to='/' className='btn btn-primary mb-3'>Back</Link>
             <div>
-                <img src={image} alt="Card image cap" className = 'mb-20'/>
+                <img src={image} alt="Card image cap" className='mb-20' />
                 <h3>{name}</h3>
-                <p className='w-5'>{lore}</p>
+                <p className='w-7'>{lore}</p>
             </div>
             <table class="table">
                 <tbody>
@@ -56,8 +58,8 @@ export default function Hero(props) {
                     </tr>
                 </tbody>
             </table>
-            <h2 className = 'mb-20'>Results against other heroes in recent matches</h2>
-            <Matchups id = {props.match.params.id}/>
+            <h2 className='mb-20'>Results against other heroes in recent matches</h2>
+            <Matchups id={props.match.params.id} />
         </div>
     )
 }
