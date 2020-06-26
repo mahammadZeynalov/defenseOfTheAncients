@@ -12,7 +12,6 @@ export default function Heroes() {
     }
     return (
         <>
-        <h1>Change Test heroku</h1>
             {
                 data.heroes.map(hero => <HeroCard key={hero.id} data={hero} />)
             }
